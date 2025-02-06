@@ -11,3 +11,6 @@ def send_file():
             client_socket.sendall(data)
     print("File sent successfully")
     client_socket.close()
+
+if __name__ == "__main__":
+    send_file()
