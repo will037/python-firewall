@@ -1,0 +1,14 @@
+import subprocess
+
+# Define the URL to block
+url_to_block = "uol.com.br"
+
+# Function to add a firewall rule
+def add_firewall_rule(name, url):
+    command = f'netsh advfirewall firewall add rule name="{name}" dir=out action=block remoteip={url}'
+    subprocess.run(command, shell=True)
+
+# Add firewall rule for the URL
+add_firewall_rule(f"Block {url_to_block}", url_to_block)
+
+print("Firewall rule added to block uol.com.br.")
